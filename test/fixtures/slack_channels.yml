@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  topic: MyString
+  creator: MyString
+  purpose: MyString
+  group_id: MyString
+  connect_to_list: false
+
+two:
+  name: MyString
+  topic: MyString
+  creator: MyString
+  purpose: MyString
+  group_id: MyString
+  connect_to_list: false

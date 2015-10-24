@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  slack_channel_id: 1
+  twitter_list_id: 1
+
+two:
+  name: MyString
+  slack_channel_id: 1
+  twitter_list_id: 1
