@@ -215,6 +215,11 @@ GEM
     resque-pool (0.6.0)
       rake
       resque (~> 1.22)
+    resque-scheduler (4.0.0)
+      mono_logger (~> 1.0)
+      redis (~> 3.0)
+      resque (~> 1.25)
+      rufus-scheduler (~> 3.0)
     retryable (2.0.2)
     rufus-scheduler (3.1.7)
     sass (3.4.19)
@@ -304,7 +309,7 @@ DEPENDENCIES
   responders (~> 2.0)
   resque
   resque-pool
-  rufus-scheduler
+  resque-scheduler
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   slack-ruby-client

@@ -46,9 +46,11 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 
 # Job Scheduler
-gem 'rufus-scheduler'
+#gem 'rufus-scheduler'
 gem 'resque-pool'
 gem 'resque', :require => "resque/server"
+gem 'resque-scheduler'
+
 
 #Credentials Manager Storage
 gem 'figaro'

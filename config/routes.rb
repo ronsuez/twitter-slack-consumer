@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   
   root 'home#index'
-  resources :slack_responses, only: :create
-  resources :twitter_client
-  get 'lists/' => 'twitter_client#lists'
-  get 'lists_detail/:id' => 'twitter_client#lists_detail'
-  get 'lists_subscriptions/' => 'twitter_client#lists_subscriptions'
-  get 'user_timeline/' => 'twitter_client#user_timeline'
+  #resources :slack_responses, only: :create
+  #resources :twitter_client
+  #get 'lists/' => 'twitter_client#lists'
+  #get 'lists_detail/:id' => 'twitter_client#lists_detail'
+  #get 'lists_subscriptions/' => 'twitter_client#lists_subscriptions'
+  #get 'user_timeline/' => 'twitter_client#user_timeline'
   
   authenticate :admin_user do #replace admin_user(s) with whatever model your users are stored in.
     mount Resque::Server.new, :at => "/jobs"
