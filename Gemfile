@@ -50,6 +50,7 @@ gem 'devise'
 gem 'resque-pool'
 gem 'resque', :require => "resque/server"
 gem 'resque-scheduler'
+gem 'resque-scheduler-web'
 
 
 #Credentials Manager Storage

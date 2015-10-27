@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   #get 'user_timeline/' => 'twitter_client#user_timeline'
   
   authenticate :admin_user do #replace admin_user(s) with whatever model your users are stored in.
+    #mount ResqueWeb::Engine, :at => '/scheduler'
     mount Resque::Server.new, :at => "/jobs"
   end
 

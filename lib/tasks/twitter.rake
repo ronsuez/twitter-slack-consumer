@@ -14,6 +14,7 @@ namespace :twitter do
 		client_lists = $twitter_client.owned_lists()
 
 		client_lists.each do |list|
+			if  (list.mode == 'private')
 				channel = ListChannel.where(twitter_list_id: list.id).first rescue nil
          
 					if channel.blank?
@@ -33,7 +34,7 @@ namespace :twitter do
 					channel.save
 
 					puts "Channel #{channel.full_name} saved"
-
+			end
 		end
 
 	end

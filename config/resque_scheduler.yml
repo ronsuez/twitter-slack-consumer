@@ -1,6 +1,6 @@
-post_to_slack_from_twitter:
+sync_slack_with_twitter:
   every:
     - "10s"
-  class: "PostToSlack"
-  queue: slack
-  description: "This job will post a list's timeline to a slack group every ten minutes"
+  class: "SyncSlackWithTwitter"
+  queue: jobs
+  description: "This job will sync twitter lists with slack"

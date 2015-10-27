@@ -1,6 +1,6 @@
 ActiveAdmin.register ListChannel do
 	config.per_page = 5
-	permit_params :full_name, :name, :description, :slack_channel_id, :is_active
+	permit_params :full_name, :name, :description, :slack_channel_id, :is_active, :created_in_slack
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -19,7 +19,7 @@ ActiveAdmin.register ListChannel do
 			input :full_name
 			input :name
 			input :description
-			input :slack_channel_id
+			input :slack_channel_id,  :as => :select , :collection => SlackChannel.all.map{ |c| [c.name, c.group_id]}
 			input :is_active
 			input :created_in_slack
 			actions

@@ -106,7 +106,7 @@ namespace :slack do |args|
 	desc "fetch tweets from an user list and send it to Slack Private Channel"
 	task :post_to_channel => :environment do 
 		#Resque task
-		lc = ListChannel.where(created_in_slack: true, is_active: true)
+		lc = ListChannel.where(created_in_slack: true, is_active: true).where.not(slack_channel_id: nil)
  		if (lc.count  > 0 )
 		    lc.each do |l|
 		    	Resque.enqueue(PostToSlack, l.name, l.twitter_list_id, l.slack_channel_id)	
