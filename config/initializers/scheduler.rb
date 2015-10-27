@@ -1,8 +1,8 @@
-# require 'rufus-scheduler'
+require 'rufus-scheduler'
 
 # # Let's use the rufus-scheduler singleton
 # #
-# s = Rufus::Scheduler.singleton
+s = Rufus::Scheduler.singleton
 
 
 # # Enviar correos para confirmar cita diariamente desde 3 
