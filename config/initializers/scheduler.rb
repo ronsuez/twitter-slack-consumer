@@ -9,9 +9,9 @@ s = Rufus::Scheduler.singleton
 # # dias antes de las cita hasta el dia anterior o hasta que confirme
 # #
 s.every '1.s' do
-puts "rufus hello"
+	puts "rufus hello"
 end
-s.every '10m' do
+s.every '1m' do
   Rails.logger.info "Sending reminders, it's #{Time.now}"
   system 'bundle exec rake slack:post_to_channel'
   #Resque.enqueue(PostToSlack) 
