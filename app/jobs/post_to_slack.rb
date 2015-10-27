@@ -5,7 +5,7 @@ class PostToSlack
 	def self.perform
 
 		puts "Fetching tweets from : #{name}"
-
+		puts "job process"
 		timeline = $twitter_client.list_timeline(twitter_list_id)
 		timeline.each do |tweet|
 				a = "[{\"pretext\": \"https://twitter.com/statuses/#{tweet.id}\", \"color\": \"#439FE0\"}]"
