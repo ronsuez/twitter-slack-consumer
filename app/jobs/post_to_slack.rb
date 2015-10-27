@@ -2,8 +2,7 @@ class PostToSlack
 	
 	@queue = :slack
 	
-	def self.perform
-
+	def self.perform(name, twitter_list_id, slack_channel_id)
 		puts "Fetching tweets from : #{name}"
 		puts "job process"
 		timeline = $twitter_client.list_timeline(twitter_list_id)

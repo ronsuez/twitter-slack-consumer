@@ -8,7 +8,7 @@ s = Rufus::Scheduler.singleton
 # # Enviar correos para confirmar cita diariamente desde 3 
 # # dias antes de las cita hasta el dia anterior o hasta que confirme
 # #
-s.every '1.s' do
+s.every '1.m' do
 	puts "rufus hello"
 end
 s.every '1m' do
