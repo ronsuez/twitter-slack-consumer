@@ -12,22 +12,27 @@ ActiveAdmin.register_page "Dashboard" do
 
     # Here is an example of a simple dashboard with columns and panels.
     #
+
+    list_channels =  ListChannel.where(list_mode: 'private').order('id desc')
+    slack_channels = SlackChannel.order('id desc')
     columns do
       column do
         panel "Lists-Channels" do
-          table_for ListChannel.order('id desc').limit(10).each do |channel|
-
-            column(:name)    {|channel| channel.full_name }
-            column(:created_in_slack?)    {|channel| channel.created_in_slack}
-            column(:is_active?)    {|channel| channel.is_active}
-            column(:link)    {|channel| link_to(channel.full_name, admin_list_channel_path(channel)) }
+          paginated_collection(list_channels.page().per(15)) do
+            table_for collection do |channel|
+              column(:name)    {|channel| channel.full_name }
+              column(:created_in_slack?)    {|channel| channel.created_in_slack}
+              column(:is_active?)    {|channel| channel.is_active}
+              column(:link)    {|channel| link_to(channel.full_name, admin_list_channel_path(channel)) }
+            end
           end
         end
       end
 
       column do
         panel "Slack-Channels" do
-            table_for SlackChannel.order('id desc').limit(10).each do |channel|
+          paginated_collection(slack_channels.page().per(15)) do
+            table_for collection do |channel|
                 column(:name)    {|channel| channel.name }
                 column(:topic)    {|channel| channel.topic}
                 column(:creator)    {|channel| channel.creator}
@@ -35,6 +40,7 @@ ActiveAdmin.register_page "Dashboard" do
                 column(:connect_to_list)    {|channel| channel.connect_to_list}
                  
             end
+          end
         end
       end
     end
