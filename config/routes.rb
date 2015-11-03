@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   root 'home#index'
   #resources :slack_responses, only: :create
   #resources :twitter_client
-  #get 'lists/' => 'twitter_client#lists'
-  #get 'lists_detail/:id' => 'twitter_client#lists_detail'
+  get 'lists/' => 'twitter_client#lists'
+  get 'lists_detail/:id' => 'twitter_client#lists_detail'
   #get 'lists_subscriptions/' => 'twitter_client#lists_subscriptions'
   #get 'user_timeline/' => 'twitter_client#user_timeline'
   
